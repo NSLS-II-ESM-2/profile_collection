@@ -535,7 +535,10 @@ class ESM_monochromator_device:
 
         #Set the offsets and translations for the requested locations.
         yield from self.change_offsets(grating, branch)
-        yield from mv(PGM.Grating_Trans, self.Grt_Translation[grating] )
+        if PGM.Grating_Trans.user_setpoint.value != self.Grt_Translation[grating]:
+            yield from mv(PGM.Mirror_Pitch_kill, 1)
+            yield from mv(PGM.Grating_Pitch_kill, 1)
+            yield from mv(PGM.Grating_Trans, self.Grt_Translation[grating] )
 
         #Determine the number of steps and make the step arrays to use when moving the photon energy.
         n_steps=int(max(round( abs(self.PGM_angles(photon_energy,grating,EPU=EPU)['gamma']-

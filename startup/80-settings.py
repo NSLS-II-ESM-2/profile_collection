@@ -20,7 +20,10 @@ This section is used to define a few settings values that are used for all scans
 
 #sd.baseline = [BeamSource, EPU105, FEslit, M1, PGM, M3, ExitSlitA, ExitSlitB, M4A, M4B, SP]
 #sd.baseline = [BeamSource,EPU57, EPU105, FEslit, M1, PGM, M3, ExitSlitA, ExitSlitB, M4A, M4B, SP]
-sd.baseline = [BeamSource,EPU57, EPU105, FEslit, M1, PGM, M3, ExitSlitA, ExitSlitB, M4A, M4B]
+#sd.baseline = [BeamSource,EPU57, EPU105, FEslit, M1, PGM, M3, ExitSlitA, ExitSlitB, M4A, M4B]
+
+# changed this line to eliminate A-branch motors Oct 2024
+sd.baseline = [BeamSource,EPU57, EPU105, FEslit, M1, PGM, M3, ExitSlitB, M4B]
 
 #This line command defines the list of motor axes that are to be displayed when using the magics
 # command %wa.
@@ -39,13 +42,13 @@ BlueskyMagics.positioners = [EPU57.gap,EPU57.phase,EPU105.gap,EPU105.phase
                              M3Uslit.h_gap, M3Uslit.h_center,M3Uslit.v_gap,M3Uslit.v_center,
                              M3Uslit.h_scan,M3Uslit.h_apperture,M3Uslit.v_scan,M3Uslit.v_apperture,
                              M3.X,M3.Y,M3.Z,M3.Rx,M3.Ry,M3.Rz,
-                             ExitSlitA.v_gap, ExitSlitA.h_gap,ExitSlitA.v_def,ExitSlitA.h_def,
+#                             ExitSlitA.v_gap, ExitSlitA.h_gap,ExitSlitA.v_def,ExitSlitA.h_def,
                              ExitSlitB.v_gap, ExitSlitB.h_gap,ExitSlitB.v_def,ExitSlitB.h_def,
                              BTA2diag.trans,BTB2diag.trans,M4AUdiag.trans,
-                             M4AUslit.h_gap, M4AUslit.h_center,M4AUslit.v_gap,M4AUslit.v_center,
-                             M4AUslit.h_scan,M4AUslit.h_apperture,M4AUslit.v_scan,M4AUslit.v_apperture,
-                             M4A.VFM_Y,M4A.VFM_Z,M4A.VFM_Rx,M4A.HFM_X,M4A.HFM_Z,M4A.HFM_Ry,
-                             M4A.HFM_Au_Mesh,M4A.VFM_Au_Mesh,
+#                             M4AUslit.h_gap, M4AUslit.h_center,M4AUslit.v_gap,M4AUslit.v_center,
+#                             M4AUslit.h_scan,M4AUslit.h_apperture,M4AUslit.v_scan,M4AUslit.v_apperture,
+#                             M4A.VFM_Y,M4A.VFM_Z,M4A.VFM_Rx,M4A.HFM_X,M4A.HFM_Z,M4A.HFM_Ry,
+#                             M4A.HFM_Au_Mesh,M4A.VFM_Au_Mesh,
                              M4B.X,M4B.Y,M4B.Z,M4B.Rx,M4B.Ry,M4B.Rz,
                              M4BDslit.h_gap, M4BDslit.h_center,M4BDslit.v_gap,M4BDslit.v_center,
                              M4BDslit.h_scan,M4BDslit.h_apperture,M4BDslit.v_scan,M4BDslit.v_apperture,
