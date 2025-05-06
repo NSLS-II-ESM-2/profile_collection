@@ -49,7 +49,7 @@ class QuadEMPort(ADBase):
 
 
 class ESMQuadEM(QuadEM):
-    conf = Cpt(QuadEMPort, port_name="EM180")
+    conf = Cpt(QuadEMPort, port_name="NSLS_EM")
     em_range = Cpt(EpicsSignalWithRBV, "Range", string=True)
 
     def __init__(self, *args, **kwargs):
@@ -84,7 +84,7 @@ qem05 = ESMQuadEM("XF:21IDB-BI{EM:5}EM180:", name="qem05")
 
 qem06 = ESMQuadEM("XF:21IDC-BI{EM:6}EM180:", name="qem06")
 qem07 = ESMQuadEM("XF:21IDC-BI{EM:7}EM180:", name="qem07")
-# qem08 = ESMQuadEM("XF:21IDC-BI{EM:8}EM180:", name="qem08")
+qem08 = ESMQuadEM("XF:21IDC-BI{EM:8}EM180:", name="qem08")
 # qem09 not connected as of May 24, 2018
 # qem09 = ESMQuadEM('XF:21IDC-BI{EM:9}EM180:', name='qem09')
 # qem10 = ESMQuadEM("XF:21IDC-BI{EM:10}EM180:", name="qem10")
@@ -92,8 +92,8 @@ qem07 = ESMQuadEM("XF:21IDC-BI{EM:7}EM180:", name="qem07")
 # qem11 = ESMQuadEM('XF:21IDC-BI{EM:11}EM180:', name='qem11')
 qem12 = ESMQuadEM("XF:21IDC-BI{EM:12}EM180:", name="qem12")
 qem13 = ESMQuadEM("XF:21IDC-BI{EM:13}EM180:", name="qem13")
-qem15 = ESMQuadEM("XF:21IDC-BI{EM:15}EM180:", name="qem15")
-qem16 = ESMQuadEM("XF:21IDC-BI{EM:16}EM180:", name="qem16")
+# qem15 = ESMQuadEM("XF:21IDC-BI{EM:15}EM180:", name="qem15")
+# qem16 = ESMQuadEM("XF:21IDC-BI{EM:16}EM180:", name="qem16")
 
 
 class MyDetector(SingleTrigger, AreaDetector):
@@ -211,6 +211,10 @@ class MyDetector(SingleTrigger, AreaDetector):
 
 #BTB5_Cam1 = MyDetector("XF:21IDD-OP{BT:B5-Cam:1}", name="BTB5_Cam1")
 #BTB5_Cam1.hdf5.write_path_template = "/direct/XF21ID1/image_files/cam19/"
+
+SltA_Cam4 = MyDetector("XF:21IDD-BI{SltA-Cam:4}", name="SltA_Cam4")
+#BTB5_Cam1.hdf5.write_path_template = "/direct/XF21ID1/image_files/cam19/"
+
 
 all_standard_pros = [
 #    Diag1_CamH,
